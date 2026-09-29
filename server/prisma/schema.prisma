@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model Pooja {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(160)
+  description String @db.Text
+  price Decimal @db.Decimal(10,2)
+  active Boolean @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  bookings Booking[]
+}
+model Booking {
+  id Int @id @default(autoincrement())
+  bookingNo String @unique @db.VarChar(40)
+  poojaId Int
+  pooja Pooja @relation(fields:[poojaId],references:[id],onDelete:Restrict)
+  devoteeName String @db.VarChar(160)
+  gotram String @db.VarChar(120)
+  phone String @db.VarChar(20)
+  email String? @db.VarChar(190)
+  address String @db.Text
+  city String @db.VarChar(100)
+  state String @db.VarChar(100)
+  pincode String? @db.VarChar(12)
+  date DateTime @db.Date
+  timeSlot String @db.VarChar(30)
+  instructions String? @db.Text
+  amount Decimal @db.Decimal(10,2)
+  status String @default("Pending") @db.VarChar(20)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  familyMembers FamilyMember[]
+  @@index([phone,date])
+  @@index([status,createdAt])
+}
+model FamilyMember {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(160)
+  bookingId Int
+  booking Booking @relation(fields:[bookingId],references:[id],onDelete:Cascade)
+}
+model Admin {
+  id Int @id @default(autoincrement())
+  email String @unique @db.VarChar(190)
+  passwordHash String @db.VarChar(255)
+  createdAt DateTime @default(now())
+}
