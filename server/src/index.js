@@ -106,8 +106,7 @@ app.post(
                 b.familyMembers
                 .map((x) => String(x).trim())
                 .filter(Boolean)
-                .slice(0, 30) :
-                [];
+                .slice(0, 30) : [];
             const bookingNo = `SVS-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
             const booking = await prisma.booking.create({
                 data: {
@@ -124,8 +123,7 @@ app.post(
                     date,
                     timeSlot: String(b.timeSlot).slice(0, 30),
                     instructions: b.instructions ?
-                        String(b.instructions).slice(0, 2000) :
-                        null,
+                        String(b.instructions).slice(0, 2000) : null,
                     amount: pooja.price,
                     familyMembers: {
                         create: names.map((name) => ({ name: name.slice(0, 160) })),
@@ -191,8 +189,6 @@ app.post(
     async(req, res, next) => {
         try {
             const email = String(req.body ? .email || "")
-                .toLowerCase()
-                .trim();
             const password = String(req.body ? .password || "");
             const admin = await prisma.admin.findUnique({ where: { email } });
             if (!admin || !(await bcrypt.compare(password, admin.passwordHash)))
@@ -340,8 +336,7 @@ app.use((err, req, res, next) => {
         return res.status(404).json({ message: "Record not found" });
     res.status(500).json({
         message: process.env.NODE_ENV === "production" ?
-            "Server error. Please try again." :
-            err.message || "Server error",
+            "Server error. Please try again." : err.message || "Server error",
     });
 });
 
