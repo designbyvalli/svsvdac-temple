@@ -381,11 +381,11 @@ a {
 }
 
 .p-button.p-button-outlined {
-    color: #873711;
+    color: white;
 }
 
 .p-button.p-button-text {
-    color: white;
+    color: #873711;
 }
 
 .blessing {

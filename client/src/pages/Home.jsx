@@ -57,15 +57,16 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-art">
-            <div className="mandala">ॐ</div>
-            <div className="art-card">
+            {/* <div className="mandala">ॐ</div> */}
+            {/* <div className="art-card">
               <div className="diya">🪔</div>
               <span>{t("With devotion", "భక్తితో")}</span>
               <b>{t("Every prayer matters", "ప్రతి ప్రార్థన పవిత్రమే")}</b>
-              <small>శుభం భవतु</small>
-            </div>
-            <div className="float flower">✿</div>
-            <div className="float star">✧</div>
+              <small>శుభం భవతు</small>
+            </div> */}
+            {/* <div className="float flower">✿</div> */}
+            {/* <div className="float star">✧</div> */}
+            <img src="/temple.png" alt="Temple" className="hero-image" />
           </div>
         </div>
       </section>
