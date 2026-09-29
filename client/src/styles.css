@@ -1,3 +1,1108 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-:root{font-family:'DM Sans',sans-serif;color:#29211c;background:#fffdf9;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}a{text-decoration:none;color:inherit}.topbar{background:#fffdf9;border-bottom:1px solid #f1e7db;position:sticky;top:0;z-index:10}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px}.brandmark{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#7c2d12;color:#ffdf9e;font-size:25px}.brand b{display:block;font-family:'Playfair Display',serif;font-size:17px}.brand small{display:block;font-size:10px;color:#9a7861;margin-top:3px}.nav nav{display:flex;gap:28px;font-size:13px;color:#725e50}.nav nav a.active,.nav nav a:hover{color:#9a3412}.navright{display:flex;align-items:center;gap:17px}.adminlink{font-size:12px;color:#775c47}.hero{background:radial-gradient(ellipse at 80% 50%,#fce6bd 0%,#f8ebd7 30%,#fff8ed 72%);overflow:hidden;position:relative}.hero-content{min-height:470px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px}.hero-copy{padding:55px 0;max-width:540px}.pill{display:inline-flex;align-items:center;gap:7px;background:#fff5e3;border:1px solid #f1d5a5;color:#a34b19;padding:8px 12px;border-radius:30px;font-size:10px;letter-spacing:1.1px;font-weight:700}.hero h1,.page h1{font-family:'Playfair Display',serif;font-weight:600;font-size:52px;line-height:1.1;letter-spacing:-1.5px;margin:20px 0 15px}.hero h1 em{display:block;color:#a34a18;font-style:normal}.hero-copy>p,.lead{font-size:14px;line-height:1.8;color:#806d5e;max-width:480px}.hero-actions{display:flex;align-items:center;gap:23px;margin-top:26px}.text-link,.view-all{font-size:12px;color:#8c421d;font-weight:700}.hero-points{display:flex;gap:22px;margin-top:34px;color:#8d7968;font-size:11px}.hero-points i{color:#a75a27;margin-right:5px}.hero-art{height:370px;position:relative;display:grid;place-items:center}.mandala{width:315px;height:315px;border:1px solid #d9ae6f;border-radius:50%;display:grid;place-items:center;color:#bb8548;font-size:105px;outline:1px dashed #d9ae6f;outline-offset:-17px;position:relative;background:repeating-conic-gradient(from 0deg,#f6dba9 0deg 2deg,transparent 2deg 15deg);box-shadow:0 20px 60px #a65b2520}.mandala:before,.mandala:after{content:'';position:absolute;border:1px solid #e0bc83;border-radius:50%;inset:18px}.mandala:after{inset:38px}.art-card{position:absolute;background:#fffaf1eF;border:1px solid #fff;border-radius:16px;padding:18px 26px;box-shadow:0 18px 55px #81401920;display:flex;align-items:center;flex-direction:column;min-width:210px;bottom:24px}.diya{font-size:42px}.art-card span{font-size:10px;color:#997a5c;margin-top:4px}.art-card b{font-family:'Playfair Display',serif;font-size:16px;margin-top:4px}.art-card small{color:#ad5d23;margin-top:7px}.float{position:absolute;color:#bd7936;font-size:35px}.flower{top:55px;right:65px}.star{bottom:100px;left:25px;font-size:52px}.section{padding-top:68px;padding-bottom:72px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:27px}.eyebrow{font-size:10px;letter-spacing:1.6px;font-weight:700;color:#b35c24}.section h2,.blessing h2{font-family:'Playfair Display',serif;font-size:30px;margin:8px 0}.section-head p{font-size:12px;color:#917b69;margin:0}.view-all{padding-bottom:7px}.grid-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.pooja-card{border:1px solid #f0e4d6;background:white;border-radius:13px;overflow:hidden;display:flex;min-height:195px;box-shadow:0 6px 20px #5b35100a;transition:.2s}.pooja-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #5b351018}.pooja-symbol{width:78px;flex-shrink:0;display:grid;place-items:center;background:linear-gradient(145deg,#fff0d4,#f8dca8);color:#aa551c;font-size:27px}.pooja-body{padding:17px 16px;flex:1;min-width:0}.pooja-body h3{font-family:'Playfair Display',serif;font-size:18px;margin:7px 0}.pooja-body p{font-size:11px;color:#887565;line-height:1.6;min-height:36px;margin:0 0 14px}.pooja-body .eyebrow{font-size:8px}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.card-bottom strong{font-size:15px;color:#793313}.p-button{background:#873711;border-color:#873711}.p-button:enabled:hover{background:#692b0d;border-color:#692b0d}.p-button.p-button-outlined{color:#873711}.p-button.p-button-text{color:#873711}.blessing{background:#7d3217;color:#fff3df}.blessing-inner{min-height:160px;display:flex;align-items:center;gap:24px}.blessing-icon{height:68px;width:68px;flex-shrink:0;border:1px solid #d99c60;border-radius:50%;display:grid;place-items:center;color:#f1c17d;font-size:38px}.blessing h2{font-size:23px;margin:0 0 7px}.blessing p{font-size:12px;line-height:1.7;color:#f1d5b8;margin:0;max-width:640px}.blessing-inner>a{margin-left:auto;white-space:nowrap}.blessing .p-button{background:#fff4df;border-color:#fff4df;color:#803512}.page h1{font-size:39px;margin:9px 0}.page .lead{margin:0 0 27px}.booking-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,.8fr);gap:22px;align-items:start}.form-card,.summary-card{background:#fff;border:1px solid #f0e4d7;border-radius:13px;padding:25px;box-shadow:0 8px 25px #63360b08}.form-card h3{font-family:'Playfair Display',serif;font-size:19px;margin:0 0 18px;display:flex;align-items:center;gap:10px}.step{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#fff0d8;color:#984416;font:700 11px 'DM Sans'}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-card label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:700;color:#685344;margin-bottom:13px}.form-card .p-inputtext,.form-card .p-inputtextarea,.form-card select,.lookup .p-inputtext{width:100%;font-family:inherit;font-size:12px;border-color:#e9ded2;background:#fffdfa}.form-card .p-inputtext,.form-card select{height:40px}.form-card .p-calendar,.form-card .p-calendar .p-inputtext{width:100%}.span2{grid-column:span 2}.subhead{margin-top:25px!important;margin-bottom:7px!important}.hint{font-size:11px;color:#927e6d;line-height:1.6}.family-row{display:flex;gap:8px;margin:8px 0}.family-row .p-inputtext{flex:1}.submit-btn{width:100%;margin-top:20px}.summary-card{position:sticky;top:95px;background:#fffaf1}.summary-symbol{height:85px;width:85px;border-radius:50%;display:grid;place-items:center;margin:20px auto 14px;background:#f8e5c3;color:#a74b17;font-size:48px}.summary-card h2{text-align:center;font:600 23px 'Playfair Display';margin:0 0 8px}.summary-card>p{text-align:center;font-size:11px;line-height:1.6;color:#917b68;margin-bottom:25px}.summary-line{display:flex;justify-content:space-between;border-top:1px solid #eddfcc;padding:13px 0;font-size:11px;color:#8a7562}.summary-line b{color:#4d3424}.summary-note{background:#fff0d9;border-radius:8px;padding:12px;font-size:10px;line-height:1.6;color:#89511e;margin-top:10px}.summary-note i{margin-right:5px}.notice{padding:12px 14px;background:#fff5df;color:#8a4c13;border-radius:7px;font-size:12px;margin:15px 0}.notice.error{background:#fff0ef;color:#b42318}.empty{padding:35px;text-align:center;color:#927d6b;background:#fff;border:1px dashed #e8d8c5;border-radius:12px;font-size:13px}.lookup{max-width:760px;display:grid;grid-template-columns:1fr 1fr auto;align-items:end;gap:12px}.lookup label{margin:0}.booking-results{display:grid;gap:12px;margin-top:22px;max-width:900px}.result-card{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:17px 19px;background:#fff;border:1px solid #efe3d6;border-radius:10px}.result-card h3{font:600 17px 'Playfair Display';margin:5px 0}.result-card p,.result-card small{font-size:11px;color:#907a68;margin:0}.result-card small{display:block}.result-right{display:flex;align-items:end;flex-direction:column;gap:8px}.status{display:inline-block;border-radius:20px;padding:5px 9px;font-size:10px;background:#fef3c7;color:#92400e}.status.confirmed{background:#dcfce7;color:#166534}.status.completed{background:#dbeafe;color:#1d4ed8}.status.cancelled{background:#fee2e2;color:#991b1b}.success{text-align:center;max-width:700px}.success-icon{height:66px;width:66px;margin:10px auto 20px;border-radius:50%;display:grid;place-items:center;background:#dcfce7;color:#15803d;font-size:27px}.success h1{font-size:35px}.success>p{font-size:13px;color:#897665;line-height:1.7}.booking-id{display:flex;flex-direction:column;gap:6px;padding:17px;background:#fff8eb;border:1px dashed #dfb777;border-radius:10px;max-width:320px;margin:25px auto}.booking-id small{font-size:9px;letter-spacing:1px;color:#a56a2e}.booking-id b{font-size:19px;color:#7b3516}.success-details{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:11px;color:#917b69}.success-details b{display:block;color:#4b3527;margin-top:5px}.centered{justify-content:center}.admin-login{max-width:410px;margin:20px auto}.admin-login h1{margin-bottom:25px}.admin-head{display:flex;justify-content:space-between;align-items:center}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:25px 0}.stats>div{background:#fff;border:1px solid #efe3d6;border-radius:10px;padding:17px}.stats small{display:block;font-size:11px;color:#8d7867}.stats b{display:block;font-size:25px;margin-top:7px;color:#783412}.tabs{display:flex;gap:8px;border-bottom:1px solid #eadfd2;margin-bottom:17px}.tabs button{border:0;background:none;padding:12px 16px;color:#806c5b;font:600 12px 'DM Sans';cursor:pointer;border-bottom:2px solid transparent}.tabs button.active{color:#923c15;border-color:#923c15}.table-wrap{overflow:auto;background:#fff;border:1px solid #efe3d6;border-radius:10px}table{border-collapse:collapse;width:100%;font-size:11px;white-space:nowrap}th,td{text-align:left;padding:13px;border-bottom:1px solid #f2e9df}th{background:#fff8ee;color:#80644e;font-size:10px}td small{display:block;color:#927d6c;margin-top:4px}td select{border:1px solid #e9ded2;border-radius:5px;padding:6px;font:inherit}.manage-grid{display:grid;grid-template-columns:300px 1fr;gap:18px}.manage-grid .form-card{display:flex;flex-direction:column;align-items:stretch}.pooja-admin-list{display:grid;gap:10px;align-content:start}.foot{display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px;color:#8d7765;font-size:11px}.foot b{font:600 16px 'Playfair Display';color:#673018}.foot p{margin:5px 0 0}.foot>span{font-size:10px}.p-inputtext:enabled:focus,.p-inputtextarea:enabled:focus{box-shadow:0 0 0 2px #f8e1bc;border-color:#c88c4d}
-@media(max-width:850px){.nav nav{gap:13px}.hero-content{min-height:420px}.hero h1{font-size:43px}.hero-art{transform:scale(.85)}.grid-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.booking-layout{grid-template-columns:1fr}.summary-card{position:static;grid-row:1}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.wrap{width:min(100% - 28px,1120px)}.nav{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 0;gap:8px}.brandmark{width:36px;height:36px}.brand b{font-size:15px}.nav nav{order:3;width:100%;justify-content:space-around;padding:8px 0 3px;border-top:1px solid #f1e7db}.nav nav a{font-size:11px}.navright{gap:9px}.adminlink{font-size:11px}.hero-content{display:flex;flex-direction:column;align-items:stretch;gap:0}.hero-copy{padding:42px 0 0}.hero h1{font-size:39px}.hero-copy>p{font-size:12px}.hero-art{height:280px;transform:scale(.8);transform-origin:top center;margin-bottom:-35px}.mandala{width:270px;height:270px}.section{padding-top:48px;padding-bottom:48px}.section-head{align-items:start;gap:12px}.section h2{font-size:25px}.section-head p{max-width:270px;line-height:1.6}.view-all{white-space:nowrap;font-size:10px}.grid-cards{grid-template-columns:1fr}.pooja-card{min-height:160px}.blessing-inner{padding-top:24px;padding-bottom:24px;flex-wrap:wrap;gap:13px}.blessing-icon{width:50px;height:50px;font-size:28px}.blessing-inner>div:nth-child(2){flex:1}.blessing h2{font-size:19px}.blessing p{font-size:11px}.blessing-inner>a{margin-left:63px}.page h1{font-size:32px}.form-card,.summary-card{padding:18px}.form-grid{grid-template-columns:1fr}.span2{grid-column:span 1}.lookup{grid-template-columns:1fr}.lookup .p-button{width:100%}.admin-head{align-items:start}.stats{gap:8px}.stats>div{padding:12px}.stats b{font-size:21px}.manage-grid{grid-template-columns:1fr}.success-details{gap:15px}.foot{gap:12px;align-items:start;flex-direction:column}}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+:root {
+    font-family: "DM Sans", sans-serif;
+    color: #29211c;
+    background: #fffdf9;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topbar {
+    background: #fffdf9;
+    border-bottom: 1px solid #f1e7db;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.brandmark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #7c2d12;
+    color: #ffdf9e;
+    font-size: 25px;
+}
+
+.brand b {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+}
+
+.brand small {
+    display: block;
+    font-size: 10px;
+    color: #9a7861;
+    margin-top: 3px;
+}
+
+.nav nav {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    color: #725e50;
+}
+
+.nav nav a.active,
+.nav nav a:hover {
+    color: #9a3412;
+}
+
+.navright {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.adminlink {
+    font-size: 12px;
+    color: #775c47;
+}
+
+.hero {
+    background: radial-gradient( ellipse at 80% 50%, #fce6bd 0%, #f8ebd7 30%, #fff8ed 72%);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    min-height: 470px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-copy {
+    padding: 55px 0;
+    max-width: 540px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #fff5e3;
+    border: 1px solid #f1d5a5;
+    color: #a34b19;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    font-weight: 700;
+}
+
+.hero h1,
+.page h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin: 20px 0 15px;
+}
+
+.hero h1 em {
+    display: block;
+    color: #a34a18;
+    font-style: normal;
+}
+
+.hero-copy>p,
+.lead {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #806d5e;
+    max-width: 480px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    margin-top: 26px;
+}
+
+.text-link,
+.view-all {
+    font-size: 12px;
+    color: #8c421d;
+    font-weight: 700;
+}
+
+.hero-points {
+    display: flex;
+    gap: 22px;
+    margin-top: 34px;
+    color: #8d7968;
+    font-size: 11px;
+}
+
+.hero-points i {
+    color: #a75a27;
+    margin-right: 5px;
+}
+
+.hero-art {
+    height: 370px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.mandala {
+    width: 315px;
+    height: 315px;
+    border: 1px solid #d9ae6f;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #bb8548;
+    font-size: 105px;
+    outline: 1px dashed #d9ae6f;
+    outline-offset: -17px;
+    position: relative;
+    background: repeating-conic-gradient( from 0deg, #f6dba9 0deg 2deg, transparent 2deg 15deg);
+    box-shadow: 0 20px 60px #a65b2520;
+}
+
+.mandala:before,
+.mandala:after {
+    content: "";
+    position: absolute;
+    border: 1px solid #e0bc83;
+    border-radius: 50%;
+    inset: 18px;
+}
+
+.mandala:after {
+    inset: 38px;
+}
+
+.art-card {
+    position: absolute;
+    background: #fffaf1ef;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    padding: 18px 26px;
+    box-shadow: 0 18px 55px #81401920;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 210px;
+    bottom: 24px;
+}
+
+.diya {
+    font-size: 42px;
+}
+
+.art-card span {
+    font-size: 10px;
+    color: #997a5c;
+    margin-top: 4px;
+}
+
+.art-card b {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.art-card small {
+    color: #ad5d23;
+    margin-top: 7px;
+}
+
+.float {
+    position: absolute;
+    color: #bd7936;
+    font-size: 35px;
+}
+
+.flower {
+    top: 55px;
+    right: 65px;
+}
+
+.star {
+    bottom: 100px;
+    left: 25px;
+    font-size: 52px;
+}
+
+.section {
+    padding-top: 68px;
+    padding-bottom: 72px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 27px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    color: #b35c24;
+}
+
+.section h2,
+.blessing h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.section-head p {
+    font-size: 12px;
+    color: #917b69;
+    margin: 0;
+}
+
+.view-all {
+    padding-bottom: 7px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pooja-card {
+    border: 1px solid #f0e4d6;
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    display: flex;
+    min-height: 195px;
+    box-shadow: 0 6px 20px #5b35100a;
+    transition: 0.2s;
+}
+
+.pooja-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px #5b351018;
+}
+
+.pooja-symbol {
+    width: 78px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #fff0d4, #f8dca8);
+    color: #aa551c;
+    font-size: 27px;
+}
+
+.pooja-body {
+    padding: 17px 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+.pooja-body h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    margin: 7px 0;
+}
+
+.pooja-body p {
+    font-size: 11px;
+    color: #887565;
+    line-height: 1.6;
+    min-height: 36px;
+    margin: 0 0 14px;
+}
+
+.pooja-body .eyebrow {
+    font-size: 8px;
+}
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.card-bottom strong {
+    font-size: 15px;
+    color: #793313;
+}
+
+.p-button {
+    background: #873711;
+    border-color: #873711;
+}
+
+.p-button:enabled:hover {
+    background: #692b0d;
+    border-color: #692b0d;
+}
+
+.p-button.p-button-outlined {
+    color: #873711;
+}
+
+.p-button.p-button-text {
+    color: white;
+}
+
+.blessing {
+    background: #7d3217;
+    color: #fff3df;
+}
+
+.blessing-inner {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.blessing-icon {
+    height: 68px;
+    width: 68px;
+    flex-shrink: 0;
+    border: 1px solid #d99c60;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #f1c17d;
+    font-size: 38px;
+}
+
+.blessing h2 {
+    font-size: 23px;
+    margin: 0 0 7px;
+}
+
+.blessing p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #f1d5b8;
+    margin: 0;
+    max-width: 640px;
+}
+
+.blessing-inner>a {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.blessing .p-button {
+    background: #fff4df;
+    border-color: #fff4df;
+    color: #803512;
+}
+
+.page h1 {
+    font-size: 39px;
+    margin: 9px 0;
+}
+
+.page .lead {
+    margin: 0 0 27px;
+}
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(250px, 0.8fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.form-card,
+.summary-card {
+    background: #fff;
+    border: 1px solid #f0e4d7;
+    border-radius: 13px;
+    padding: 25px;
+    box-shadow: 0 8px 25px #63360b08;
+}
+
+.form-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff0d8;
+    color: #984416;
+    font: 700 11px "DM Sans";
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-card label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #685344;
+    margin-bottom: 13px;
+}
+
+.form-card .p-inputtext,
+.form-card .p-inputtextarea,
+.form-card select,
+.lookup .p-inputtext {
+    width: 100%;
+    font-family: inherit;
+    font-size: 12px;
+    border-color: #e9ded2;
+    background: #fffdfa;
+}
+
+.form-card .p-inputtext,
+.form-card select {
+    height: 40px;
+}
+
+.form-card .p-calendar,
+.form-card .p-calendar .p-inputtext {
+    width: 100%;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.subhead {
+    margin-top: 25px !important;
+    margin-bottom: 7px !important;
+}
+
+.hint {
+    font-size: 11px;
+    color: #927e6d;
+    line-height: 1.6;
+}
+
+.family-row {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.family-row .p-inputtext {
+    flex: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.summary-card {
+    position: sticky;
+    top: 95px;
+    background: #fffaf1;
+}
+
+.summary-symbol {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 20px auto 14px;
+    background: #f8e5c3;
+    color: #a74b17;
+    font-size: 48px;
+}
+
+.summary-card h2 {
+    text-align: center;
+    font: 600 23px "Playfair Display";
+    margin: 0 0 8px;
+}
+
+.summary-card>p {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #917b68;
+    margin-bottom: 25px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eddfcc;
+    padding: 13px 0;
+    font-size: 11px;
+    color: #8a7562;
+}
+
+.summary-line b {
+    color: #4d3424;
+}
+
+.summary-note {
+    background: #fff0d9;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 10px;
+    line-height: 1.6;
+    color: #89511e;
+    margin-top: 10px;
+}
+
+.summary-note i {
+    margin-right: 5px;
+}
+
+.notice {
+    padding: 12px 14px;
+    background: #fff5df;
+    color: #8a4c13;
+    border-radius: 7px;
+    font-size: 12px;
+    margin: 15px 0;
+}
+
+.notice.error {
+    background: #fff0ef;
+    color: #b42318;
+}
+
+.empty {
+    padding: 35px;
+    text-align: center;
+    color: #927d6b;
+    background: #fff;
+    border: 1px dashed #e8d8c5;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.lookup {
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 12px;
+}
+
+.lookup label {
+    margin: 0;
+}
+
+.booking-results {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+    max-width: 900px;
+}
+
+.result-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 19px;
+    background: #fff;
+    border: 1px solid #efe3d6;
+    border-radius: 10px;
+}
+
+.result-card h3 {
+    font: 600 17px "Playfair Display";
+    margin: 5px 0;
+}
+
+.result-card p,
+.result-card small {
+    font-size: 11px;
+    color: #907a68;
+    margin: 0;
+}
+
+.result-card small {
+    display: block;
+}
+
+.result-right {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 9px;
+    font-size: 10px;
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.confirmed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.completed {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status.cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.success {
+    text-align: center;
+    max-width: 700px;
+}
+
+.success-icon {
+    height: 66px;
+    width: 66px;
+    margin: 10px auto 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 27px;
+}
+
+.success h1 {
+    font-size: 35px;
+}
+
+.success>p {
+    font-size: 13px;
+    color: #897665;
+    line-height: 1.7;
+}
+
+.booking-id {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 17px;
+    background: #fff8eb;
+    border: 1px dashed #dfb777;
+    border-radius: 10px;
+    max-width: 320px;
+    margin: 25px auto;
+}
+
+.booking-id small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #a56a2e;
+}
+
+.booking-id b {
+    font-size: 19px;
+    color: #7b3516;
+}
+
+.success-details {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: #917b69;
+}
+
+.success-details b {
+    display: block;
+    color: #4b3527;
+    margin-top: 5px;
+}
+
+.centered {
+    justify-content: center;
+}
+
+.admin-login {
+    max-width: 410px;
+    margin: 20px auto;
+}
+
+.admin-login h1 {
+    margin-bottom: 25px;
+}
+
+.admin-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+    margin: 25px 0;
+}
+
+.stats>div {
+    background: #fff;
+    border: 1px solid #efe3d6;
+    border-radius: 10px;
+    padding: 17px;
+}
+
+.stats small {
+    display: block;
+    font-size: 11px;
+    color: #8d7867;
+}
+
+.stats b {
+    display: block;
+    font-size: 25px;
+    margin-top: 7px;
+    color: #783412;
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #eadfd2;
+    margin-bottom: 17px;
+}
+
+.tabs button {
+    border: 0;
+    background: none;
+    padding: 12px 16px;
+    color: #806c5b;
+    font: 600 12px "DM Sans";
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tabs button.active {
+    color: #923c15;
+    border-color: #923c15;
+}
+
+.table-wrap {
+    overflow: auto;
+    background: #fff;
+    border: 1px solid #efe3d6;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #f2e9df;
+}
+
+th {
+    background: #fff8ee;
+    color: #80644e;
+    font-size: 10px;
+}
+
+td small {
+    display: block;
+    color: #927d6c;
+    margin-top: 4px;
+}
+
+td select {
+    border: 1px solid #e9ded2;
+    border-radius: 5px;
+    padding: 6px;
+    font: inherit;
+}
+
+.manage-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 18px;
+}
+
+.manage-grid .form-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.pooja-admin-list {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    color: #8d7765;
+    font-size: 11px;
+}
+
+.foot b {
+    font: 600 16px "Playfair Display";
+    color: #673018;
+}
+
+.foot p {
+    margin: 5px 0 0;
+}
+
+.foot>span {
+    font-size: 10px;
+}
+
+.p-inputtext:enabled:focus,
+.p-inputtextarea:enabled:focus {
+    box-shadow: 0 0 0 2px #f8e1bc;
+    border-color: #c88c4d;
+}
+
+@media (max-width: 850px) {
+    .nav nav {
+        gap: 13px;
+    }
+    .hero-content {
+        min-height: 420px;
+    }
+    .hero h1 {
+        font-size: 43px;
+    }
+    .hero-art {
+        transform: scale(0.85);
+    }
+    .grid-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+    .summary-card {
+        position: static;
+        grid-row: 1;
+    }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .wrap {
+        width: min(100% - 28px, 1120px);
+    }
+    .nav {
+        height: auto;
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        gap: 8px;
+    }
+    .brandmark {
+        width: 36px;
+        height: 36px;
+    }
+    .brand b {
+        font-size: 15px;
+    }
+    .nav nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-around;
+        padding: 8px 0 3px;
+        border-top: 1px solid #f1e7db;
+    }
+    .nav nav a {
+        font-size: 11px;
+    }
+    .navright {
+        gap: 9px;
+    }
+    .adminlink {
+        font-size: 11px;
+    }
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    .hero-copy {
+        padding: 42px 0 0;
+    }
+    .hero h1 {
+        font-size: 39px;
+    }
+    .hero-copy>p {
+        font-size: 12px;
+    }
+    .hero-art {
+        height: 280px;
+        transform: scale(0.8);
+        transform-origin: top center;
+        margin-bottom: -35px;
+    }
+    .mandala {
+        width: 270px;
+        height: 270px;
+    }
+    .section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    .section-head {
+        align-items: start;
+        gap: 12px;
+    }
+    .section h2 {
+        font-size: 25px;
+    }
+    .section-head p {
+        max-width: 270px;
+        line-height: 1.6;
+    }
+    .view-all {
+        white-space: nowrap;
+        font-size: 10px;
+    }
+    .grid-cards {
+        grid-template-columns: 1fr;
+    }
+    .pooja-card {
+        min-height: 160px;
+    }
+    .blessing-inner {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+    .blessing-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+    .blessing-inner>div:nth-child(2) {
+        flex: 1;
+    }
+    .blessing h2 {
+        font-size: 19px;
+    }
+    .blessing p {
+        font-size: 11px;
+    }
+    .blessing-inner>a {
+        margin-left: 63px;
+    }
+    .page h1 {
+        font-size: 32px;
+    }
+    .form-card,
+    .summary-card {
+        padding: 18px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .span2 {
+        grid-column: span 1;
+    }
+    .lookup {
+        grid-template-columns: 1fr;
+    }
+    .lookup .p-button {
+        width: 100%;
+    }
+    .admin-head {
+        align-items: start;
+    }
+    .stats {
+        gap: 8px;
+    }
+    .stats>div {
+        padding: 12px;
+    }
+    .stats b {
+        font-size: 21px;
+    }
+    .manage-grid {
+        grid-template-columns: 1fr;
+    }
+    .success-details {
+        gap: 15px;
+    }
+    .foot {
+        gap: 12px;
+        align-items: start;
+        flex-direction: column;
+    }
+}
