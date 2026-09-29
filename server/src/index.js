@@ -188,8 +188,10 @@ app.post(
     }),
     async(req, res, next) => {
         try {
-            const email = String(req.body ? .email || "")
-            const password = String(req.body ? .password || "");
+            const email = String((req.body && req.body.email) || "")
+                .toLowerCase()
+                .trim();
+            const password = String((req.body && req.body.password) || "");
             const admin = await prisma.admin.findUnique({ where: { email } });
             if (!admin || !(await bcrypt.compare(password, admin.passwordHash)))
                 return res.status(401).json({ message: "Invalid email or password" });
@@ -243,7 +245,7 @@ app.get("/api/admin/bookings", requireAdmin, async(req, res, next) => {
 app.patch("/api/admin/bookings/:id", requireAdmin, async(req, res, next) => {
     try {
         const allowed = ["Pending", "Confirmed", "Completed", "Cancelled"];
-        if (!allowed.includes(req.body ? .status))
+        if (!allowed.includes(req.body && req.body.status))
             return res.status(400).json({ message: "Invalid booking status" });
         const booking = await prisma.booking.update({
             where: { id: Number(req.params.id) },
