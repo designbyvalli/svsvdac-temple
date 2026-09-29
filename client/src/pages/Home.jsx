@@ -24,7 +24,7 @@ export default function Home() {
             </span>
             <h1>
               {t("Book your pooja.", "మీ పూజను")}
-              <em>{t("Receive divine blessings.", "బుక్ చేసుకోండి.")}</em>
+              <em>{t("R eceive divine blessings.", "బుక్ చేసుకోండి.")}</em>
             </h1>
             <p>
               {t(
