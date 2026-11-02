@@ -11,9 +11,20 @@ import { requireAdmin } from "./auth.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const allowed = (process.env.CLIENT_URL || "http://localhost:5173")
+
+const defaultOrigins = [
+    "http://localhost:5173",
+    "https://svsvdac-temple.vercel.app",
+    "https://sripoojastore.com",
+    "https://www.sripoojastore.com"
+];
+
+const envOrigins = (process.env.CLIENT_URL || "")
     .split(",")
-    .map((s) => s.trim());
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+const allowed = [...new Set([...defaultOrigins, ...envOrigins])];
 
 if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32)
     console.warn(
@@ -106,7 +117,8 @@ app.post(
                 b.familyMembers
                 .map((x) => String(x).trim())
                 .filter(Boolean)
-                .slice(0, 30) : [];
+                .slice(0, 30) :
+                [];
             const bookingNo = `SVS-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
             const booking = await prisma.booking.create({
                 data: {
@@ -123,7 +135,8 @@ app.post(
                     date,
                     timeSlot: String(b.timeSlot).slice(0, 30),
                     instructions: b.instructions ?
-                        String(b.instructions).slice(0, 2000) : null,
+                        String(b.instructions).slice(0, 2000) :
+                        null,
                     amount: pooja.price,
                     familyMembers: {
                         create: names.map((name) => ({ name: name.slice(0, 160) })),
@@ -244,8 +257,8 @@ app.get("/api/admin/bookings", requireAdmin, async(req, res, next) => {
 
 app.patch("/api/admin/bookings/:id", requireAdmin, async(req, res, next) => {
     try {
-        const allowed = ["Pending", "Confirmed", "Completed", "Cancelled"];
-        if (!allowed.includes(req.body && req.body.status))
+        const allowedStatuses = ["Pending", "Confirmed", "Completed", "Cancelled"];
+        if (!allowedStatuses.includes(req.body && req.body.status))
             return res.status(400).json({ message: "Invalid booking status" });
         const booking = await prisma.booking.update({
             where: { id: Number(req.params.id) },
@@ -338,7 +351,8 @@ app.use((err, req, res, next) => {
         return res.status(404).json({ message: "Record not found" });
     res.status(500).json({
         message: process.env.NODE_ENV === "production" ?
-            "Server error. Please try again." : err.message || "Server error",
+            "Server error. Please try again." :
+            err.message || "Server error",
     });
 });
 
