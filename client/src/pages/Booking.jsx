@@ -238,7 +238,6 @@ export default function Booking() {
                 onChange={(e) => change("timeSlot", e.target.value)}
               >
                 <option>Morning</option>
-                <option>Afternoon</option>
                 <option>Evening</option>
               </select>
             </label>
