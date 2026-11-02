@@ -124,7 +124,7 @@ export default function Booking() {
             <label>
               {t("Mobile Number *", "మొబైల్ నంబర్ *")}
               <InputText
-                required
+                
                 keyfilter="int"
                 minLength={10}
                 maxLength={15}
