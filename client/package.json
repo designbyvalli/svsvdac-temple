@@ -9,6 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "html-to-image": "^1.11.13",
         "primeflex": "^3.3.1",
         "primeicons": "^7.0.0",
         "primereact": "^10.9.7",
@@ -20,5 +21,4 @@
         "@vitejs/plugin-react": "^4.7.0",
         "vite": "^5.4.19"
     }
-
 }
