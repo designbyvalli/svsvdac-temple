@@ -145,7 +145,7 @@ export default function Booking() {
             <label className="span2">
               {t("Address *", "చిరునామా *")}
               <InputTextarea
-                required
+                
                 rows={2}
                 value={form.address}
                 onChange={(e) => change("address", e.target.value)}
