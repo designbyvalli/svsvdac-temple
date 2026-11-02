@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Button } from "primereact/button";
-import { Dropdown } from "primereact/dropdown";
 import { api } from "../api";
+
 function Login() {
   const [email, setEmail] = useState(""),
     [password, setPassword] = useState(""),
     [err, setErr] = useState(""),
     [busy, setBusy] = useState(false),
     nav = useNavigate();
+
   const go = async (e) => {
     e.preventDefault();
     setBusy(true);
@@ -27,6 +28,7 @@ function Login() {
       setBusy(false);
     }
   };
+
   return (
     <section className="wrap page section">
       <form className="form-card admin-login" onSubmit={go}>
@@ -56,6 +58,7 @@ function Login() {
     </section>
   );
 }
+
 function Panel() {
   const [bookings, setBookings] = useState([]),
     [poojas, setPoojas] = useState([]),
@@ -64,6 +67,7 @@ function Panel() {
     [draft, setDraft] = useState({ name: "", description: "", price: "" }),
     [editing, setEditing] = useState(null),
     nav = useNavigate();
+
   const load = () =>
     Promise.all([api("/admin/bookings"), api("/admin/poojas")])
       .then(([b, p]) => {
@@ -71,9 +75,11 @@ function Panel() {
         setPoojas(p.poojas || []);
       })
       .catch((e) => setErr(e.message));
+
   useEffect(() => {
     load();
   }, []);
+
   const status = async (id, value) => {
     try {
       await api(`/admin/bookings/${id}`, {
@@ -85,6 +91,7 @@ function Panel() {
       setErr(e.message);
     }
   };
+
   const save = async (e) => {
     e.preventDefault();
     try {
@@ -99,15 +106,138 @@ function Panel() {
       setErr(e.message);
     }
   };
+
   const edit = (p) => {
     setDraft({ name: p.name, description: p.description, price: p.price });
     setEditing(p.id);
     setTab("poojas");
   };
+
   const logout = async () => {
     await api("/admin/logout", { method: "POST" });
     nav("/admin/login");
   };
+
+  const getFamilyMembers = (b) => {
+    if (Array.isArray(b.members) && b.members.length > 0) {
+      return b.members;
+    }
+    if (Array.isArray(b.familyMembers) && b.familyMembers.length > 0) {
+      return b.familyMembers;
+    }
+    if (Array.isArray(b.names) && b.names.length > 0) {
+      return b.names;
+    }
+    if (typeof b.familyDetails === "string" && b.familyDetails.trim()) {
+      return b.familyDetails.split(/[\n,]+/).map((n) => ({ name: n.trim() }));
+    }
+    return [];
+  };
+
+  const printReceipt = (b) => {
+    const formattedDate = new Date(b.date).toLocaleDateString("en-IN");
+    const membersList = getFamilyMembers(b);
+
+    const membersHtml =
+      membersList.length > 0
+        ? `
+        <div class="divider"></div>
+        <div class="bold" style="margin-bottom: 3px;">DEVOTEES / FAMILY NAMES:</div>
+        <table class="names-table">
+          <thead>
+            <tr>
+              <th align="left">#</th>
+              <th align="left">Name</th>
+              <th align="right">Relation/Rasi</th>
+            </tr>
+          </thead>
+          <tbody>
+                 <td align="left">1.</td>
+                 <td align="left"> ${b.devoteeName}</td>
+         
+            ${membersList
+              .map(
+                (m, idx) => `
+              <tr>
+              
+                <td>${idx + 2}.</td>
+                <td>${typeof m === "string" ? m : m.name || "-"}</td>
+                <td align="right">${typeof m === "object" ? m.relation || m.star || m.rasi || "" : ""}</td>
+              </tr>
+            `
+              )
+              .join("")}
+          </tbody>
+        </table>
+      `
+        : "";
+
+    const printWindow = window.open("", "_blank", "width=320,height=600");
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Receipt - ${b.bookingNo}</title>
+          <style>
+            @page {
+              size: 58mm auto;
+              margin: 0;
+            }
+            body {
+              width: 48mm;
+              margin: 0 auto;
+              padding: 4mm 2mm;
+              font-family: monospace;
+              font-size: 11px;
+              line-height: 1.35;
+              color: #000;
+            }
+            .center { text-align: center; }
+            .divider { border-top: 1px dashed #000; margin: 4px 0; }
+            .row { display: flex; justify-content: space-between; margin-bottom: 2px; }
+            .bold { font-weight: bold; }
+            .title { font-size: 13px; font-weight: bold; }
+            .names-table { width: 100%; border-collapse: collapse; font-size: 10px; margin-top: 2px; }
+            .names-table th, .names-table td { padding: 1px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="center title">SVSVDAC TEMPLE</div>
+          <div class="center">POOJA SANKALPAM SLIP</div>
+          <div class="divider"></div>
+          <div><b>Receipt No:</b> ${b.bookingNo}</div>
+          <div><b>Date:</b> ${formattedDate}</div>
+          <div><b>Slot:</b> ${b.timeSlot || "N/A"}</div>
+          <div class="divider"></div>
+          <div><b>Pooja:</b> ${b.poojaName}</div>
+          <div><b>Main Devotee:</b> ${b.devoteeName}</div>
+          <div><b>Gotram:</b> ${b.gotram || "N/A"}</div>
+          <div><b>Phone:</b> ${b.phone || "N/A"}</div>
+          <div><b>City:</b> ${b.city || "N/A"}</div>
+          ${membersHtml}
+          <div class="divider"></div>
+          <div class="row bold">
+            <span>Amount Paid:</span>
+            <span>₹${b.amount}</span>
+          </div>
+          <div class="divider"></div>
+          
+          <script>
+            window.onload = function() {
+              window.focus();
+              window.print();
+              window.close();
+            };
+          </script>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+  };
+{/* <div class="center">Status: CONFIRMED</div>
+          <div class="center" style="margin-top: 6px;">*** SARVE JANA SUKHINO BHAVANTU ***</div> */}
+  const confirmedBookings = bookings.filter((b) => b.status === "Confirmed");
+
   return (
     <section className="wrap page section">
       <div className="admin-head">
@@ -136,7 +266,7 @@ function Panel() {
         </div>
         <div>
           <small>Confirmed</small>
-          <b>{bookings.filter((b) => b.status === "Confirmed").length}</b>
+          <b>{confirmedBookings.length}</b>
         </div>
         <div>
           <small>Active Poojas</small>
@@ -148,7 +278,13 @@ function Panel() {
           className={tab === "bookings" ? "active" : ""}
           onClick={() => setTab("bookings")}
         >
-          Bookings
+          All Bookings
+        </button>
+        <button
+          className={tab === "confirmed" ? "active" : ""}
+          onClick={() => setTab("confirmed")}
+        >
+          Confirmed Poojas
         </button>
         <button
           className={tab === "poojas" ? "active" : ""}
@@ -157,13 +293,14 @@ function Panel() {
           Manage Poojas
         </button>
       </div>
-      {tab === "bookings" ? (
+
+      {tab === "bookings" && (
         <div className="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>Booking</th>
-                <th>Devotee</th>
+                <th>Devotee / Names</th>
                 <th>Pooja / Date</th>
                 <th>Gotram</th>
                 <th>Amount</th>
@@ -172,49 +309,127 @@ function Panel() {
               </tr>
             </thead>
             <tbody>
-              {bookings.map((b) => (
-                <tr key={b.id}>
-                  <td>
-                    <b>{b.bookingNo}</b>
-                    <small>{b.phone}</small>
-                  </td>
-                  <td>
-                    {b.devoteeName}
-                    <small>{b.city}</small>
-                  </td>
-                  <td>
-                    {b.poojaName}
-                    <small>
-                      {new Date(b.date).toLocaleDateString("en-IN")} ·{" "}
-                      {b.timeSlot}
-                    </small>
-                  </td>
-                  <td>{b.gotram}</td>
-                  <td>₹{b.amount}</td>
-                  <td>
-                    <span className={`status ${b.status.toLowerCase()}`}>
-                      {b.status}
-                    </span>
-                  </td>
-                  <td>
-                    <select
-                      value={b.status}
-                      onChange={(e) => status(b.id, e.target.value)}
-                    >
-                      {["Pending", "Confirmed", "Completed", "Cancelled"].map(
-                        (s) => (
-                          <option key={s}>{s}</option>
-                        ),
+              {bookings.map((b) => {
+                const members = getFamilyMembers(b);
+                return (
+                  <tr key={b.id}>
+                    <td>
+                      <b>{b.bookingNo}</b>
+                      <small>{b.phone}</small>
+                    </td>
+                    <td>
+                      <b>{b.devoteeName}</b>
+                      <small>{b.city}</small>
+                      {members.length > 0 && (
+                        <small style={{ color: "#555" }}>
+                          + {members.map((m) => (typeof m === "string" ? m : m.name)).join(", ")}
+                        </small>
                       )}
-                    </select>
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                    <td>
+                      {b.poojaName}
+                      <small>
+                        {new Date(b.date).toLocaleDateString("en-IN")} ·{" "}
+                        {b.timeSlot}
+                      </small>
+                    </td>
+                    <td>{b.gotram}</td>
+                    <td>₹{b.amount}</td>
+                    <td>
+                      <span className={`status ${b.status.toLowerCase()}`}>
+                        {b.status}
+                      </span>
+                    </td>
+                    <td>
+                      <select
+                        value={b.status}
+                        onChange={(e) => status(b.id, e.target.value)}
+                      >
+                        {["Pending", "Confirmed", "Completed", "Cancelled"].map(
+                          (s) => (
+                            <option key={s}>{s}</option>
+                          )
+                        )}
+                      </select>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
           {!bookings.length && <div className="empty">No bookings yet.</div>}
         </div>
-      ) : (
+      )}
+
+      {tab === "confirmed" && (
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Booking No</th>
+                <th>Primary Devotee</th>
+                <th>Family / Extra Names</th>
+                <th>Gotram</th>
+                <th>Pooja</th>
+                <th>Date & Slot</th>
+                <th>Amount</th>
+                <th>Print Slip</th>
+              </tr>
+            </thead>
+            <tbody>
+              {confirmedBookings.map((b) => {
+                const members = getFamilyMembers(b);
+                return (
+                  <tr key={b.id}>
+                    <td>
+                      <b>{b.bookingNo}</b>
+                      <small>{b.phone}</small>
+                    </td>
+                    <td>
+                      <b>{b.devoteeName}</b>
+                      <small>{b.city}</small>
+                    </td>
+                    <td>
+                      {members.length > 0 ? (
+                        <div style={{ fontSize: "12px", lineHeight: "1.3" }}>
+                          {members.map((m, idx) => (
+                            <div key={idx}>
+                              • {typeof m === "string" ? m : `${m.name}${m.relation ? ` (${m.relation})` : ""}`}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <small style={{ color: "#888" }}>None</small>
+                      )}
+                    </td>
+                    <td>{b.gotram}</td>
+                    <td>{b.poojaName}</td>
+                    <td>
+                      {new Date(b.date).toLocaleDateString("en-IN")}
+                      <small>{b.timeSlot}</small>
+                    </td>
+                    <td>₹{b.amount}</td>
+                    <td>
+                      <Button
+                        icon="pi pi-print"
+                        label="Print Slip"
+                        size="small"
+                        severity="success"
+                        onClick={() => printReceipt(b)}
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          {!confirmedBookings.length && (
+            <div className="empty">No confirmed bookings found.</div>
+          )}
+        </div>
+      )}
+
+      {tab === "poojas" && (
         <div className="manage-grid">
           <form className="form-card" onSubmit={save}>
             <h3>{editing ? "Edit Pooja" : "Add Pooja"}</h3>
@@ -282,6 +497,7 @@ function Panel() {
     </section>
   );
 }
+
 export default function Admin() {
   return (
     <Routes>

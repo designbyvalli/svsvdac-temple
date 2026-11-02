@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap");
+.panchangam-page {
+    font-family: "Noto Sans Telugu", sans-serif;
+    color: #2e241b;
+    padding: 18px;
+    background: #f8f4e8;
+    min-height: 100vh;
+}
+
+.panchangam-toolbar {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid #dfd1ae;
+    border-radius: 12px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.toolbar-date {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 210px;
+}
+
+.toolbar-date label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.toolbar-date .p-calendar,
+.toolbar-date .p-inputtext {
+    width: 100%;
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.toolbar-actions .p-button {
+    font-family: inherit;
+    font-size: 13px;
+    border-radius: 8px;
+    background: #805126;
+    border-color: #805126;
+}
+
+.toolbar-actions .p-button.p-button-outlined {
+    background: transparent;
+    color: #805126;
+}
+
+.panchangam-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 180px;
+    color: #81532d;
+}
+
+.panchangam-message {
+    display: flex;
+    max-width: 900px;
+    margin: 12px auto;
+}
+
+.poster-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0 20px;
+}
+
+.panchangam-poster {
+    width: min(100%, 570px);
+    background: #fffdf4;
+    padding: 10px;
+    box-shadow: 0 8px 30px #38250d24;
+}
+
+.poster-border {
+    border: 1px solid #bba77b;
+    outline: 1px solid #e5d9bb;
+    outline-offset: -5px;
+    background: #fffdf4;
+    padding: 12px 13px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.poster-header {
+    text-align: center;
+    padding: 3px 0 10px;
+    background: linear-gradient(180deg, #fffdf4, #f7f0dc);
+    border-bottom: 2px solid #cbb98e;
+    position: relative;
+}
+
+.ornament-row {
+    font-size: 17px;
+    color: #b59b67;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 26px;
+}
+
+.header-symbol {
+    font-size: 30px;
+    color: #9a7946;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.poster-kicker {
+    font-size: 11px;
+    color: #9a7946;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.poster-header h1 {
+    font-size: clamp(22px, 5vw, 29px);
+    line-height: 1.45;
+    margin: 1px 0 0;
+    font-weight: 800;
+    color: #281b17;
+}
+
+.poster-header h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #754d28;
+    font-weight: 700;
+}
+
+.header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 10px auto 0;
+}
+
+.header-meta span {
+    background: #f3ead3;
+    border: 1px solid #d8c59b;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.header-meta i {
+    color: #98703e;
+    margin-right: 4px;
+}
+
+.location-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    background: #f8edcf;
+    border-bottom: 1px solid #cbb98e;
+    padding: 8px 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #3d3024;
+}
+
+.location-strip span+span {
+    border-left: 1px solid #c4ad7d;
+    padding-left: 8px;
+}
+
+.poster-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 13px auto 14px;
+    padding: 9px 10px;
+    background: #f6eedb;
+    border: 1px solid #cbb98e;
+    border-radius: 11px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.poster-date i {
+    color: #875a2c;
+    font-size: 19px;
+}
+
+.sun-moon-grid,
+.main-grid,
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin: 9px 0;
+}
+
+.panchang-detail {
+    min-width: 0;
+    text-align: center;
+    padding: 12px 9px 13px;
+    border: 1px solid #c7b68c;
+    border-radius: 17px;
+    background: #fff9e9;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 104px;
+}
+
+.panchang-detail:before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px dashed #d6c69e;
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.detail-icon {
+    height: 27px;
+    width: 27px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9dfc2;
+    color: #947448;
+    font-size: 14px;
+    margin-bottom: 4px;
+    z-index: 1;
+}
+
+.detail-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5e492d;
+    margin-bottom: 3px;
+    z-index: 1;
+}
+
+.detail-value {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    z-index: 1;
+}
+
+.tint-sage {
+    background: #edf2df;
+    border-color: #b7c29b;
+}
+
+.tint-sage:before {
+    border-color: #c4cda9;
+}
+
+.tint-cream {
+    background: #fbf1dc;
+}
+
+.sun-moon-grid .panchang-detail {
+    min-height: 91px;
+    background: #f1f5e6;
+}
+
+.sun-moon-grid .detail-icon {
+    background: #dce8c6;
+    color: #8b854b;
+}
+
+.sun-moon-grid .detail-value {
+    font-size: 15px;
+}
+
+.sub-grid {
+    gap: 7px;
+}
+
+.sub-grid .panchang-detail {
+    min-height: 82px;
+    padding: 8px 5px;
+    border-radius: 12px;
+}
+
+.sub-grid .detail-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+.sub-grid .detail-label {
+    font-size: 10px;
+}
+
+.sub-grid .detail-value {
+    font-size: 11px;
+}
+
+.period-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 13px 0 8px;
+    padding: 7px 8px;
+    background: #eaf0df;
+    border: 1px solid #b5c39b;
+    border-radius: 22px;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.period-heading span {
+    color: #8d8058;
+}
+
+.period-grid {
+    border: 1px solid #c6b58a;
+    border-radius: 13px;
+    padding: 5px 12px;
+    background: #fffaf0;
+}
+
+.period-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid #e7dcc3;
+    font-size: 11px;
+}
+
+.period-row:last-child {
+    border-bottom: 0;
+}
+
+.period-row span {
+    font-weight: 600;
+    color: #5d472c;
+}
+
+.period-row b {
+    text-align: right;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.festival-note {
+    margin-top: 9px;
+    padding: 8px 10px;
+    border: 1px solid #d4bf8e;
+    border-radius: 10px;
+    background: #f5ecd5;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.festival-note b {
+    text-align: right;
+}
+
+.poster-footer {
+    margin-top: 11px;
+    padding-top: 8px;
+    border-top: 1px solid #cbb98e;
+    text-align: center;
+    color: #8a6d40;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.poster-footer span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.poster-footer small {
+    font-size: 9px;
+    color: #8c806b;
+}
+
+@media (max-width: 480px) {
+    .panchangam-page {
+        padding: 9px;
+    }
+    .panchangam-toolbar {
+        padding: 12px;
+    }
+    .toolbar-date {
+        width: 100%;
+    }
+    .toolbar-actions {
+        width: 100%;
+    }
+    .toolbar-actions .p-button {
+        flex: 1;
+        justify-content: center;
+        font-size: 11px;
+        padding: 0.65rem 0.45rem;
+    }
+    .panchangam-poster {
+        padding: 6px;
+    }
+    .poster-border {
+        padding: 8px;
+    }
+    .poster-date {
+        font-size: 12px;
+    }
+    .panchang-detail {
+        padding: 9px 5px;
+        min-height: 94px;
+    }
+    .detail-label {
+        font-size: 10px;
+    }
+    .detail-value {
+        font-size: 12px;
+    }
+    .period-heading {
+        font-size: 12px;
+    }
+    .period-row {
+        font-size: 10px;
+    }
+    .period-row b {
+        font-size: 10px;
+    }
+    .ornament-row {
+        font-size: 14px;
+    }
+}

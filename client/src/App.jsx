@@ -22,6 +22,7 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </Shell>
+
     </LanguageProvider>
   );
 }

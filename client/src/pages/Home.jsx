@@ -4,6 +4,7 @@ import { Button } from "primereact/button";
 import PoojaCard from "../components/PoojaCard";
 import { api } from "../api";
 import { useLang } from "../context/LanguageContext";
+import Panchagam from "../components/panchangam";
 export default function Home() {
   const [poojas, setPoojas] = useState([]);
   const { lang, t } = useLang();
@@ -24,7 +25,7 @@ export default function Home() {
             </span>
             <h1>
               {t("Book your pooja.", "మీ పూజను")}
-              <em>{t("R eceive divine blessings.", "బుక్ చేసుకోండి.")}</em>
+              <em>{t("Receive divine blessings.", "బుక్ చేసుకోండి.")}</em>
             </h1>
             <p>
               {t(
@@ -66,7 +67,7 @@ export default function Home() {
             </div> */}
             {/* <div className="float flower">✿</div> */}
             {/* <div className="float star">✧</div> */}
-            <img src="/temple.png" alt="Temple" className="hero-image" />
+            {/* <img src="/temple.png" alt="Temple" className="hero-image" /> */}
           </div>
         </div>
       </section>
@@ -128,6 +129,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+                  {/* <Panchagam /> */}
+      
     </>
   );
 }
